@@ -5,6 +5,8 @@ import 'package:rive/rive.dart';
 import 'package:todo_app/controllers/controllers.dart';
 import 'package:todo_app/pages/pages.dart';
 
+import '../../auth/auth.dart';
+
 class SignInPage extends StatelessWidget {
   SignInPage({super.key});
 
@@ -143,8 +145,16 @@ class SignInPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 120.0),
                         child: InkWell(
-                          onTap: () {
-                            print("clicked");
+                          onTap: () async {
+                            if (_formKey.currentState!.validate()) {
+                              signController.start();
+                              Authentication.instance
+                                  .signInWithEmailAndPassword(
+                                _emailController.text.trim(),
+                                _passwordController.text.trim(),
+                              );
+                              signController.done();
+                            }
                           },
                           child: Container(
                             height: 56.h,
