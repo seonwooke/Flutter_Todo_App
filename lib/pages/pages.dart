@@ -1,1 +1,3 @@
-export 'init/init_page.dart';
+export './init/init.dart';
+export './home/home.dart';
+export './sign/sign.dart';

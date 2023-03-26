@@ -17,5 +17,17 @@ class AppPages {
       name: AppRoutes.instance.INIT,
       page: () => InitPage(),
     ),
+    GetPage(
+      name: AppRoutes.instance.SIGNIN,
+      page: () => SignInPage(),
+    ),
+    GetPage(
+      name: AppRoutes.instance.SIGNUP,
+      page: () => SignUpPage(),
+    ),
+    GetPage(
+      name: AppRoutes.instance.HOME,
+      page: () => HomePage(),
+    ),
   ];
 }

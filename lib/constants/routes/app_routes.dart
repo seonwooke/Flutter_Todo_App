@@ -9,4 +9,7 @@ class AppRoutes {
   static AppRoutes get instance => _instance;
 
   final String INIT = '/';
+  final String SIGNIN = '/sign_in';
+  final String SIGNUP = '/sign_up';
+  final String HOME = '/home';
 }
